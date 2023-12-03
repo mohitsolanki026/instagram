@@ -7,8 +7,9 @@ export const addNewPost = (postData) => async (dispatch) => {
     try {
 
         dispatch({ type: NEW_POST_REQUEST });
-        const config = { header: { "Content-Type": "application/json" } }
-        const { data } = await axios.post("/api/v1/post/new", postData, config);
+        // const config = { header: { "Content-Type": "application/json" } }
+        // const { data } = await axios.post("/api/v1/post/new", postData, config);
+        const { data } = await axios.post("/api/v1/post/new", postData);
 
         dispatch({
             type: NEW_POST_SUCCESS,

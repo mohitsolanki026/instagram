@@ -136,7 +136,7 @@ const UpdateProfile = () => {
                         placeholder="Website"
                         value={website}
                         onChange={(e) => setWebsite(e.target.value)}
-                        required
+                        // required
                     />
                 </div>
                 <div className="flex w-full gap-8 text-right items-start">

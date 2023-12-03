@@ -6,10 +6,12 @@ const cloudinary = require('cloudinary');
 
 // Create New Post
 exports.newPost = catchAsync(async (req, res, next) => {
+try {
 
-    const myCloud = await cloudinary.v2.uploader.upload(req.body.post, {
+    const myCloud = await cloudinary.uploader.upload(req.body.post, {
         folder: "instagram/posts",
     });
+    
 
     const postData = {
         caption: req.body.caption,
@@ -30,6 +32,10 @@ exports.newPost = catchAsync(async (req, res, next) => {
         success: true,
         post,
     });
+} catch (error) {
+    console.log(error)
+}
+
 });
 
 // Like or Unlike Post
